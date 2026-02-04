@@ -3,9 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Muxammadin Idrisaliyev | Portfolio</title>
+<title>Muxammadin Idrisaliyev | Full Stack & Cybersecurity</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
 
 <style>
@@ -18,7 +18,7 @@ body{
   color:white;
 }
 
-/* HEADER */
+/* ================= HEADER ================= */
 header{
   padding:20px 60px;
   display:flex;
@@ -26,21 +26,20 @@ header{
   align-items:center;
   flex-wrap:wrap;
 }
-header h1{margin:0;font-size:24px}
-
-nav{
-  display:flex;
-  align-items:center;
-  flex-wrap:wrap;
+header h1{
+  margin:0;
+  font-size:24px;
+  font-weight:700;
 }
 nav a{
   color:white;
   margin-left:20px;
   text-decoration:none;
+  font-weight:500;
 }
 nav a:hover{color:#38bdf8}
 
-/* HERO */
+/* ================= HERO ================= */
 .hero{
   min-height:90vh;
   display:flex;
@@ -50,71 +49,89 @@ nav a:hover{color:#38bdf8}
   text-align:center;
   padding:20px;
 }
-.hero h2{font-size:45px;margin:0}
+.hero h2{
+  font-size:46px;
+  margin:0;
+}
 .hero span{color:#38bdf8}
-
-/* SECTIONS */
-section{padding:60px}
-h3{color:#38bdf8;font-size:32px}
-
-/* CARDS */
-.card{
-  background:rgba(255,255,255,0.08);
-  padding:15px;
+.hero p{
   margin-top:15px;
-  border-radius:15px;
+  opacity:.9;
 }
 
-/* SKILLS */
-.skill{margin-top:15px}
+/* ================= SECTIONS ================= */
+section{padding:60px}
+h3{
+  color:#38bdf8;
+  font-size:32px;
+}
+
+/* ================= CARDS ================= */
+.card{
+  background:rgba(255,255,255,0.08);
+  padding:20px;
+  margin-top:20px;
+  border-radius:16px;
+  transition:transform .4s ease, box-shadow .4s ease;
+}
+.card:hover{
+  transform:translateY(-8px);
+  box-shadow:0 20px 40px rgba(0,0,0,.25);
+}
+
+/* ================= SKILLS ================= */
+.skill{margin-top:20px}
 .bar{
   background:rgba(255,255,255,0.2);
   border-radius:20px;
   overflow:hidden;
-  margin-top:5px;
+  margin-top:6px;
 }
 .fill{
   height:12px;
   background:#38bdf8;
   width:0;
-  transition:width 1.5s ease;
+  transition:width 1.6s ease;
 }
 
-/* CONTACT */
+/* ================= CONTACT ================= */
 .contact-icons a{
   color:#38bdf8;
   font-size:18px;
   display:block;
-  margin-top:10px;
+  margin-top:12px;
   text-decoration:none;
+  transition:transform .3s ease;
 }
-.contact-icons a:hover{transform:translateX(5px)}
+.contact-icons a:hover{
+  transform:translateX(8px);
+}
 
-/* FOOTER */
-footer{text-align:center;padding:20px;opacity:.7}
+/* ================= FOOTER ================= */
+footer{
+  text-align:center;
+  padding:25px;
+  opacity:.7;
+}
 
-/* ANIMATIONS */
+/* ================= ANIMATIONS ================= */
 .fade{
   opacity:0;
-  transform:translateY(30px);
-  transition:all 0.8s ease;
+  transform:translateY(40px);
+  transition:all .9s ease;
 }
 .fade.show{
   opacity:1;
   transform:translateY(0);
 }
 
-/* RESPONSIVE */
+/* ================= RESPONSIVE ================= */
 @media(max-width:768px){
   header{padding:15px 20px;flex-direction:column;align-items:flex-start}
-  nav{flex-direction:column;align-items:flex-start}
-  nav a{margin:8px 0}
+  nav{margin-top:10px}
+  nav a{margin:8px 12px 0 0}
   section{padding:40px 20px}
-  .hero h2{font-size:30px}
-}
-@media(max-width:480px){
-  .hero h2{font-size:26px}
-  header h1{font-size:20px}
+  .hero h2{font-size:32px}
 }
 </style>
 </head>
@@ -122,7 +139,6 @@ footer{text-align:center;padding:20px;opacity:.7}
 
 <header class="fade">
 <h1>Muxammadin Idrisaliyev</h1>
-
 <nav>
 <a href="#home">Home</a>
 <a href="#about">About</a>
@@ -140,9 +156,10 @@ footer{text-align:center;padding:20px;opacity:.7}
 <section id="about" class="fade">
 <h3>About Me</h3>
 <p>
-I am Muxammadin Idrisaliyev — a Full Stack Developer focused on Cybersecurity,
-building secure applications and working on real-world projects.
+I am Muxammadin Idrisaliyev — a Full Stack Developer with a strong focus on
+Cybersecurity. I enjoy building secure systems and working on real-world projects.
 </p>
+
 <div class="card">
 📍 Namangan Region, To‘raqo‘rg‘on District <br><br>
 <b>University of Business and Science</b><br>
@@ -190,15 +207,15 @@ Information Systems and Technologies (2025 – 2026)
 <footer class="fade">© 2026 Muxammadin Idrisaliyev</footer>
 
 <script>
-const observer=new IntersectionObserver(entries=>{
+const observer = new IntersectionObserver(entries=>{
   entries.forEach(entry=>{
     if(entry.isIntersecting){
       entry.target.classList.add("show");
       if(entry.target.classList.contains("fill")){
-        entry.target.style.width=entry.target.dataset.width;
+        entry.target.style.width = entry.target.dataset.width;
       }
     }
-  })
+  });
 },{threshold:0.2});
 
 document.querySelectorAll(".fade,.fill").forEach(el=>observer.observe(el));
