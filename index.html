@@ -40,15 +40,6 @@ nav a{
 }
 nav a:hover{color:#38bdf8}
 
-.lang button{
-  background:#38bdf8;
-  border:none;
-  margin-left:5px;
-  padding:5px 10px;
-  border-radius:5px;
-  cursor:pointer;
-}
-
 /* HERO */
 .hero{
   min-height:90vh;
@@ -133,120 +124,84 @@ footer{text-align:center;padding:20px;opacity:.7}
 <h1>Muxammadin Idrisaliyev</h1>
 
 <nav>
-<a href="#home" data-lang="home">Home</a>
-<a href="#about" data-lang="about">About</a>
-<a href="#skills" data-lang="skills">Skills</a>
-<a href="#projects" data-lang="projects">Projects</a>
-<a href="#contact" data-lang="contact">Contact</a>
-
-<span class="lang">
-<button onclick="setLang('uz')">UZ</button>
-<button onclick="setLang('ru')">RU</button>
-<button onclick="setLang('en')">EN</button>
-</span>
+<a href="#home">Home</a>
+<a href="#about">About</a>
+<a href="#skills">Skills</a>
+<a href="#projects">Projects</a>
+<a href="#contact">Contact</a>
 </nav>
 </header>
 
 <section class="hero fade" id="home">
-<h2 data-lang="heroTitle">IT Specialist & <span>Cybersecurity Enthusiast</span></h2>
-<p data-lang="heroText">HTML, CSS, JavaScript, Node.js va Kali Linux bilan ishlayman</p>
+<h2>Full Stack Developer & <span>Cybersecurity Specialist</span></h2>
+<p>Building secure, scalable, and modern web applications</p>
 </section>
 
 <section id="about" class="fade">
-<h3 data-lang="aboutTitle">Men haqimda</h3>
-<p data-lang="aboutText">
-Men Idrisaliyev Muxammadin — IT va Cybersecurity yo‘nalishida o‘rganuvchi va kichik loyihalarini quruvchiman.
+<h3>About Me</h3>
+<p>
+I am Muxammadin Idrisaliyev — a Full Stack Developer focused on Cybersecurity,
+building secure applications and working on real-world projects.
 </p>
 <div class="card">
-📍 Namangan viloyati, To‘raqo‘rg‘on tumani <br><br>
-<b data-lang="uni">University of Business and Science</b><br>
-<span data-lang="edu">Axborot tizimlari va texnologiyalari (2025 - 2026)</span>
+📍 Namangan Region, To‘raqo‘rg‘on District <br><br>
+<b>University of Business and Science</b><br>
+Information Systems and Technologies (2025 – 2026)
 </div>
 </section>
 
 <section id="skills" class="fade">
-<h3 data-lang="skillsTitle">Skills</h3>
+<h3>Skills</h3>
 
-<div class="skill">HTML
+<div class="skill">HTML / CSS
   <div class="bar"><div class="fill" data-width="75%"></div></div>
 </div>
-<div class="skill">CSS
-  <div class="bar"><div class="fill" data-width="50%"></div></div>
-</div>
-<div class="skill">JavaScript & Node.js
+
+<div class="skill">JavaScript / Node.js / Backend
   <div class="bar"><div class="fill" data-width="45%"></div></div>
 </div>
-<div class="skill">Kali Linux & Cybersecurity
+
+<div class="skill">Databases & APIs
+  <div class="bar"><div class="fill" data-width="40%"></div></div>
+</div>
+
+<div class="skill">Cybersecurity / Kali Linux
   <div class="bar"><div class="fill" data-width="50%"></div></div>
 </div>
 </section>
 
 <section id="projects" class="fade">
-<h3 data-lang="projectsTitle">Projects</h3>
+<h3>Projects</h3>
 <div class="card">Personal Portfolio Website</div>
-<div class="card">Landing Page Projects</div>
+<div class="card">Full Stack Web Applications</div>
 <div class="card">Cybersecurity Practice Labs</div>
 </section>
 
 <section id="contact" class="fade">
-<h3 data-lang="contactTitle">Contact</h3>
+<h3>Contact</h3>
 <div class="contact-icons">
-<a href="tel:+998935457307"><i class="fa-solid fa-phone"></i> +998935457307</a>
+<a href="tel:+998935457307"><i class="fa-solid fa-phone"></i> +998 93 545 73 07</a>
 <a href="mailto:midrisaliyev@gmail.com"><i class="fa-solid fa-envelope"></i> midrisaliyev@gmail.com</a>
-<a href="https://instagram.com/muxammadin17" target="_blank"><i class="fa-brands fa-instagram"></i> muxammadin17</a>
-<a href="https://github.com/muxammadin7" target="_blank"><i class="fa-brands fa-github"></i> github.com/muxammadin7</a>
+<a href="https://instagram.com/muxammadin17" target="_blank"><i class="fa-brands fa-instagram"></i> Instagram</a>
+<a href="https://github.com/muxammadin7" target="_blank"><i class="fa-brands fa-github"></i> GitHub</a>
 </div>
 </section>
 
 <footer class="fade">© 2026 Muxammadin Idrisaliyev</footer>
 
 <script>
-const observer=new IntersectionObserver(e=>{
-  e.forEach(i=>{
-    if(i.isIntersecting){
-      i.target.classList.add("show");
-      if(i.target.classList.contains("fill")){
-        i.target.style.width=i.target.dataset.width;
+const observer=new IntersectionObserver(entries=>{
+  entries.forEach(entry=>{
+    if(entry.isIntersecting){
+      entry.target.classList.add("show");
+      if(entry.target.classList.contains("fill")){
+        entry.target.style.width=entry.target.dataset.width;
       }
     }
   })
 },{threshold:0.2});
 
 document.querySelectorAll(".fade,.fill").forEach(el=>observer.observe(el));
-
-const translations={
-  uz:{home:"Bosh sahifa",about:"Men haqimda",skills:"Ko‘nikmalar",projects:"Loyihalar",contact:"Aloqa",
-  heroTitle:"IT Mutaxassis & <span>Cybersecurity Enthusiast</span>",
-  heroText:"HTML, CSS, JavaScript, Node.js va Kali Linux bilan ishlayman",
-  aboutTitle:"Men haqimda",
-  aboutText:"Men Idrisaliyev Muxammadin — IT va Cybersecurity yo‘nalishida o‘rganuvchi va kichik loyihalarini quruvchiman.",
-  uni:"University of Business and Science",
-  edu:"Axborot tizimlari va texnologiyalari (2025 - 2026)",
-  skillsTitle:"Ko‘nikmalar",projectsTitle:"Loyihalar",contactTitle:"Aloqa"},
-  ru:{home:"Главная",about:"Обо мне",skills:"Навыки",projects:"Проекты",contact:"Контакты",
-  heroTitle:"IT специалист & <span>Кибербезопасность</span>",
-  heroText:"Работаю с HTML, CSS, JavaScript, Node.js и Kali Linux",
-  aboutTitle:"Обо мне",
-  aboutText:"Я Мухаммадин Идрисалиев — изучаю IT и кибербезопасность и создаю проекты.",
-  uni:"University of Business and Science",
-  edu:"Информационные системы и технологии (2025 - 2026)",
-  skillsTitle:"Навыки",projectsTitle:"Проекты",contactTitle:"Контакты"},
-  en:{home:"Home",about:"About",skills:"Skills",projects:"Projects",contact:"Contact",
-  heroTitle:"IT Specialist & <span>Cybersecurity Enthusiast</span>",
-  heroText:"Working with HTML, CSS, JavaScript, Node.js and Kali Linux",
-  aboutTitle:"About Me",
-  aboutText:"I am Muxammadin Idrisaliyev — studying IT & Cybersecurity and building projects.",
-  uni:"University of Business and Science",
-  edu:"Information Systems and Technologies (2025 - 2026)",
-  skillsTitle:"Skills",projectsTitle:"Projects",contactTitle:"Contact"}
-};
-
-function setLang(l){
-  document.querySelectorAll("[data-lang]").forEach(el=>{
-    el.innerHTML=translations[l][el.dataset.lang];
-  })
-}
-setLang('uz');
 </script>
 
 </body>
