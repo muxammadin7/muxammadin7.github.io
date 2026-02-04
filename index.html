@@ -9,9 +9,7 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
 
 <style>
-*{
-  box-sizing:border-box;
-}
+*{box-sizing:border-box}
 
 body{
   margin:0;
@@ -20,7 +18,7 @@ body{
   color:white;
 }
 
-/* ===== HEADER ===== */
+/* HEADER */
 header{
   padding:20px 60px;
   display:flex;
@@ -28,10 +26,7 @@ header{
   align-items:center;
   flex-wrap:wrap;
 }
-header h1{
-  margin:0;
-  font-size:24px;
-}
+header h1{margin:0;font-size:24px}
 
 nav{
   display:flex;
@@ -42,8 +37,8 @@ nav a{
   color:white;
   margin-left:20px;
   text-decoration:none;
-  font-size:15px;
 }
+nav a:hover{color:#38bdf8}
 
 .lang button{
   background:#38bdf8;
@@ -54,7 +49,7 @@ nav a{
   cursor:pointer;
 }
 
-/* ===== HERO ===== */
+/* HERO */
 .hero{
   min-height:90vh;
   display:flex;
@@ -64,25 +59,23 @@ nav a{
   text-align:center;
   padding:20px;
 }
-.hero h2{
-  font-size:45px;
-  margin:0;
-}
-.hero span{color:#38bdf8;}
+.hero h2{font-size:45px;margin:0}
+.hero span{color:#38bdf8}
 
-/* ===== SECTIONS ===== */
-section{
-  padding:60px;
-}
-h3{
-  color:#38bdf8;
-  font-size:32px;
-}
+/* SECTIONS */
+section{padding:60px}
+h3{color:#38bdf8;font-size:32px}
 
-/* ===== SKILLS ===== */
-.skill{
+/* CARDS */
+.card{
+  background:rgba(255,255,255,0.08);
+  padding:15px;
   margin-top:15px;
+  border-radius:15px;
 }
+
+/* SKILLS */
+.skill{margin-top:15px}
 .bar{
   background:rgba(255,255,255,0.2);
   border-radius:20px;
@@ -92,17 +85,11 @@ h3{
 .fill{
   height:12px;
   background:#38bdf8;
+  width:0;
+  transition:width 1.5s ease;
 }
 
-/* ===== CARDS ===== */
-.card{
-  background:rgba(255,255,255,0.08);
-  padding:15px;
-  margin-top:15px;
-  border-radius:15px;
-}
-
-/* ===== CONTACT ===== */
+/* CONTACT */
 .contact-icons a{
   color:#38bdf8;
   font-size:18px;
@@ -110,73 +97,39 @@ h3{
   margin-top:10px;
   text-decoration:none;
 }
+.contact-icons a:hover{transform:translateX(5px)}
 
-/* ===== FOOTER ===== */
-footer{
-  text-align:center;
-  padding:20px;
-  opacity:.7;
+/* FOOTER */
+footer{text-align:center;padding:20px;opacity:.7}
+
+/* ANIMATIONS */
+.fade{
+  opacity:0;
+  transform:translateY(30px);
+  transition:all 0.8s ease;
+}
+.fade.show{
+  opacity:1;
+  transform:translateY(0);
 }
 
-/* =========================
-   📱 MOBILE RESPONSIVE
-   ========================= */
-@media (max-width: 768px){
-
-  header{
-    padding:15px 20px;
-    flex-direction:column;
-    align-items:flex-start;
-  }
-
-  nav{
-    margin-top:10px;
-    flex-direction:column;
-    align-items:flex-start;
-  }
-
-  nav a{
-    margin:8px 0;
-  }
-
-  .lang{
-    margin-top:10px;
-  }
-
-  .hero h2{
-    font-size:30px;
-  }
-
-  section{
-    padding:40px 20px;
-  }
-
-  h3{
-    font-size:26px;
-  }
-
-  .contact-icons a{
-    font-size:16px;
-  }
+/* RESPONSIVE */
+@media(max-width:768px){
+  header{padding:15px 20px;flex-direction:column;align-items:flex-start}
+  nav{flex-direction:column;align-items:flex-start}
+  nav a{margin:8px 0}
+  section{padding:40px 20px}
+  .hero h2{font-size:30px}
 }
-
-/* =========================
-   📱 SMALL PHONES
-   ========================= */
-@media (max-width: 480px){
-  .hero h2{
-    font-size:26px;
-  }
-
-  header h1{
-    font-size:20px;
-  }
+@media(max-width:480px){
+  .hero h2{font-size:26px}
+  header h1{font-size:20px}
 }
 </style>
 </head>
 <body>
 
-<header>
+<header class="fade">
 <h1>Muxammadin Idrisaliyev</h1>
 
 <nav>
@@ -194,17 +147,16 @@ footer{
 </nav>
 </header>
 
-<section class="hero" id="home">
+<section class="hero fade" id="home">
 <h2 data-lang="heroTitle">IT Specialist & <span>Cybersecurity Enthusiast</span></h2>
 <p data-lang="heroText">HTML, CSS, JavaScript, Node.js va Kali Linux bilan ishlayman</p>
 </section>
 
-<section id="about">
+<section id="about" class="fade">
 <h3 data-lang="aboutTitle">Men haqimda</h3>
 <p data-lang="aboutText">
 Men Idrisaliyev Muxammadin — IT va Cybersecurity yo‘nalishida o‘rganuvchi va kichik loyihalarini quruvchiman.
 </p>
-
 <div class="card">
 📍 Namangan viloyati, To‘raqo‘rg‘on tumani <br><br>
 <b data-lang="uni">University of Business and Science</b><br>
@@ -212,36 +164,32 @@ Men Idrisaliyev Muxammadin — IT va Cybersecurity yo‘nalishida o‘rganuvchi 
 </div>
 </section>
 
-<section id="skills">
+<section id="skills" class="fade">
 <h3 data-lang="skillsTitle">Skills</h3>
 
 <div class="skill">HTML
-  <div class="bar"><div class="fill" style="width:75%"></div></div>
+  <div class="bar"><div class="fill" data-width="75%"></div></div>
 </div>
-
 <div class="skill">CSS
-  <div class="bar"><div class="fill" style="width:50%"></div></div>
+  <div class="bar"><div class="fill" data-width="50%"></div></div>
 </div>
-
 <div class="skill">JavaScript & Node.js
-  <div class="bar"><div class="fill" style="width:45%"></div></div>
+  <div class="bar"><div class="fill" data-width="45%"></div></div>
 </div>
-
 <div class="skill">Kali Linux & Cybersecurity
-  <div class="bar"><div class="fill" style="width:50%"></div></div>
+  <div class="bar"><div class="fill" data-width="50%"></div></div>
 </div>
 </section>
 
-<section id="projects">
+<section id="projects" class="fade">
 <h3 data-lang="projectsTitle">Projects</h3>
 <div class="card">Personal Portfolio Website</div>
 <div class="card">Landing Page Projects</div>
 <div class="card">Cybersecurity Practice Labs</div>
 </section>
 
-<section id="contact">
+<section id="contact" class="fade">
 <h3 data-lang="contactTitle">Contact</h3>
-
 <div class="contact-icons">
 <a href="tel:+998935457307"><i class="fa-solid fa-phone"></i> +998935457307</a>
 <a href="mailto:midrisaliyev@gmail.com"><i class="fa-solid fa-envelope"></i> midrisaliyev@gmail.com</a>
@@ -250,65 +198,53 @@ Men Idrisaliyev Muxammadin — IT va Cybersecurity yo‘nalishida o‘rganuvchi 
 </div>
 </section>
 
-<footer>© 2026 Muxammadin Idrisaliyev</footer>
+<footer class="fade">© 2026 Muxammadin Idrisaliyev</footer>
 
 <script>
-const translations = {
-  uz:{
-    home:"Bosh sahifa",
-    about:"Men haqimda",
-    skills:"Ko‘nikmalar",
-    projects:"Loyihalar",
-    contact:"Aloqa",
-    heroTitle:"IT Mutaxassis & <span>Cybersecurity Enthusiast</span>",
-    heroText:"HTML, CSS, JavaScript, Node.js va Kali Linux bilan ishlayman",
-    aboutTitle:"Men haqimda",
-    aboutText:"Men Idrisaliyev Muxammadin — IT va Cybersecurity yo‘nalishida o‘rganuvchi va kichik loyihalarini quruvchiman.",
-    uni:"University of Business and Science",
-    edu:"Axborot tizimlari va texnologiyalari (2025 - 2026)",
-    skillsTitle:"Ko‘nikmalar",
-    projectsTitle:"Loyihalar",
-    contactTitle:"Aloqa"
-  },
-  ru:{
-    home:"Главная",
-    about:"Обо мне",
-    skills:"Навыки",
-    projects:"Проекты",
-    contact:"Контакты",
-    heroTitle:"IT специалист & <span>Кибербезопасность</span>",
-    heroText:"Работаю с HTML, CSS, JavaScript, Node.js и Kali Linux",
-    aboutTitle:"Обо мне",
-    aboutText:"Я Мухаммадин Идрисалиев — изучаю IT и кибербезопасность и создаю собственные проекты.",
-    uni:"University of Business and Science",
-    edu:"Информационные системы и технологии (2025 - 2026)",
-    skillsTitle:"Навыки",
-    projectsTitle:"Проекты",
-    contactTitle:"Контакты"
-  },
-  en:{
-    home:"Home",
-    about:"About",
-    skills:"Skills",
-    projects:"Projects",
-    contact:"Contact",
-    heroTitle:"IT Specialist & <span>Cybersecurity Enthusiast</span>",
-    heroText:"Working with HTML, CSS, JavaScript, Node.js and Kali Linux",
-    aboutTitle:"About Me",
-    aboutText:"I am Muxammadin Idrisaliyev — studying IT & Cybersecurity and building my own projects.",
-    uni:"University of Business and Science",
-    edu:"Information Systems and Technologies (2025 - 2026)",
-    skillsTitle:"Skills",
-    projectsTitle:"Projects",
-    contactTitle:"Contact"
-  }
+const observer=new IntersectionObserver(e=>{
+  e.forEach(i=>{
+    if(i.isIntersecting){
+      i.target.classList.add("show");
+      if(i.target.classList.contains("fill")){
+        i.target.style.width=i.target.dataset.width;
+      }
+    }
+  })
+},{threshold:0.2});
+
+document.querySelectorAll(".fade,.fill").forEach(el=>observer.observe(el));
+
+const translations={
+  uz:{home:"Bosh sahifa",about:"Men haqimda",skills:"Ko‘nikmalar",projects:"Loyihalar",contact:"Aloqa",
+  heroTitle:"IT Mutaxassis & <span>Cybersecurity Enthusiast</span>",
+  heroText:"HTML, CSS, JavaScript, Node.js va Kali Linux bilan ishlayman",
+  aboutTitle:"Men haqimda",
+  aboutText:"Men Idrisaliyev Muxammadin — IT va Cybersecurity yo‘nalishida o‘rganuvchi va kichik loyihalarini quruvchiman.",
+  uni:"University of Business and Science",
+  edu:"Axborot tizimlari va texnologiyalari (2025 - 2026)",
+  skillsTitle:"Ko‘nikmalar",projectsTitle:"Loyihalar",contactTitle:"Aloqa"},
+  ru:{home:"Главная",about:"Обо мне",skills:"Навыки",projects:"Проекты",contact:"Контакты",
+  heroTitle:"IT специалист & <span>Кибербезопасность</span>",
+  heroText:"Работаю с HTML, CSS, JavaScript, Node.js и Kali Linux",
+  aboutTitle:"Обо мне",
+  aboutText:"Я Мухаммадин Идрисалиев — изучаю IT и кибербезопасность и создаю проекты.",
+  uni:"University of Business and Science",
+  edu:"Информационные системы и технологии (2025 - 2026)",
+  skillsTitle:"Навыки",projectsTitle:"Проекты",contactTitle:"Контакты"},
+  en:{home:"Home",about:"About",skills:"Skills",projects:"Projects",contact:"Contact",
+  heroTitle:"IT Specialist & <span>Cybersecurity Enthusiast</span>",
+  heroText:"Working with HTML, CSS, JavaScript, Node.js and Kali Linux",
+  aboutTitle:"About Me",
+  aboutText:"I am Muxammadin Idrisaliyev — studying IT & Cybersecurity and building projects.",
+  uni:"University of Business and Science",
+  edu:"Information Systems and Technologies (2025 - 2026)",
+  skillsTitle:"Skills",projectsTitle:"Projects",contactTitle:"Contact"}
 };
 
-function setLang(lang){
+function setLang(l){
   document.querySelectorAll("[data-lang]").forEach(el=>{
-    const key = el.getAttribute("data-lang");
-    el.innerHTML = translations[lang][key];
-  });
+    el.innerHTML=translations[l][el.dataset.lang];
+  })
 }
 setLang('uz');
 </script>
